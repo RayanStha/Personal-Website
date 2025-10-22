@@ -1,116 +1,65 @@
-// Travel Map Data - ADD YOUR LOCATIONS HERE
+// Travel Map Data - YOUR LOCATIONS
 const travelLocations = [
-    {
-        name: "Paris, France",
-        lat: 48.8566,
-        lng: 2.3522,
-        country: "France",
-        continent: "Europe",
-        date: "Summer 2023",
-        description: "The city of lights and love. Visited the Eiffel Tower, Louvre Museum, and enjoyed amazing French cuisine.",
-        highlight: "Watching sunset from the Eiffel Tower",
-        photos: [
-            {
-                src: "images/travel/paris1.jpg",
-                caption: "Eiffel Tower at sunset",
-                placeholder: true
-            },
-            {
-                src: "images/travel/paris2.jpg",
-                caption: "Louvre Museum",
-                placeholder: true
-            }
-        ]
-    },
-    {
-        name: "Tokyo, Japan",
-        lat: 35.6762,
-        lng: 139.6503,
-        country: "Japan",
-        continent: "Asia",
-        date: "Spring 2023",
-        description: "An incredible blend of traditional and modern culture. Cherry blossoms, temples, and amazing technology.",
-        highlight: "Cherry blossom viewing in Shinjuku Gyoen",
-        photos: [
-            {
-                src: "images/travel/tokyo1.jpg",
-                caption: "Cherry blossoms in Tokyo",
-                placeholder: true
-            },
-            {
-                src: "images/travel/tokyo2.jpg",
-                caption: "Tokyo skyline",
-                placeholder: true
-            }
-        ]
-    },
-    {
-        name: "New York City, USA",
-        lat: 40.7128,
-        lng: -74.0060,
-        country: "USA",
-        continent: "North America",
-        date: "Fall 2022",
-        description: "The city that never sleeps. Explored Central Park, Times Square, and the Statue of Liberty.",
-        highlight: "View from Top of the Rock at night",
-        photos: [
-            {
-                src: "images/travel/nyc1.jpg",
-                caption: "Manhattan skyline",
-                placeholder: true
-            },
-            {
-                src: "images/travel/nyc2.jpg",
-                caption: "Central Park in autumn",
-                placeholder: true
-            }
-        ]
-    },
-    {
-        name: "Barcelona, Spain",
-        lat: 41.3851,
-        lng: 2.1734,
-        country: "Spain",
-        continent: "Europe",
-        date: "Summer 2022",
-        description: "Gaudí's masterpieces, beautiful beaches, and vibrant culture. La Sagrada Familia was breathtaking.",
-        highlight: "Sunrise at Park Güell",
-        photos: [
-            {
-                src: "images/travel/barcelona1.jpg",
-                caption: "La Sagrada Familia",
-                placeholder: true
-            },
-            {
-                src: "images/travel/barcelona2.jpg",
-                caption: "Park Güell",
-                placeholder: true
-            }
-        ]
-    },
-    {
-        name: "Sydney, Australia",
-        lat: -33.8688,
-        lng: 151.2093,
-        country: "Australia",
-        continent: "Australia",
-        date: "Winter 2022",
-        description: "Beautiful harbor, iconic Opera House, and amazing beaches. The wildlife was incredible!",
-        highlight: "Opera House at sunset",
-        photos: [
-            {
-                src: "images/travel/sydney1.jpg",
-                caption: "Sydney Opera House",
-                placeholder: true
-            },
-            {
-                src: "images/travel/sydney2.jpg",
-                caption: "Bondi Beach",
-                placeholder: true
-            }
-        ]
-    }
-    // Add more locations following the same format
+    // United States
+    { name: "Austin, TX", lat: 30.2672, lng: -97.7431, country: "USA", continent: "North America", date: "Visited", description: "Texas capital with live music and great food scene.", highlight: "Live music on 6th Street", photos: [{ src: "images/travel/austin.jpg", caption: "Austin", placeholder: true }] },
+    { name: "Charlotte, NC", lat: 35.2271, lng: -80.8431, country: "USA", continent: "North America", date: "Visited", description: "Modern southern city with great culture.", highlight: "City exploration", photos: [{ src: "images/travel/charlotte.jpg", caption: "Charlotte", placeholder: true }] },
+    { name: "Sayreville, NJ", lat: 40.4595, lng: -74.3609, country: "USA", continent: "North America", date: "Visited", description: "New Jersey adventures.", highlight: "East Coast vibes", photos: [{ src: "images/travel/sayreville.jpg", caption: "Sayreville", placeholder: true }] },
+    { name: "New York City, NY", lat: 40.7128, lng: -74.0060, country: "USA", continent: "North America", date: "Visited", description: "The city that never sleeps.", highlight: "Manhattan skyline", photos: [{ src: "images/travel/nyc.jpg", caption: "NYC", placeholder: true }] },
+    { name: "Las Vegas, NV", lat: 36.1699, lng: -115.1398, country: "USA", continent: "North America", date: "Visited", description: "Entertainment capital of the world.", highlight: "The Strip", photos: [{ src: "images/travel/vegas.jpg", caption: "Las Vegas", placeholder: true }] },
+    { name: "Seattle, WA", lat: 47.6062, lng: -122.3321, country: "USA", continent: "North America", date: "Visited", description: "Pacific Northwest beauty.", highlight: "Space Needle views", photos: [{ src: "images/travel/seattle.jpg", caption: "Seattle", placeholder: true }] },
+    
+    // Canada
+    { name: "Toronto, ON", lat: 43.6532, lng: -79.3832, country: "Canada", continent: "North America", date: "Visited", description: "Canada's largest city with diverse culture.", highlight: "CN Tower", photos: [{ src: "images/travel/toronto.jpg", caption: "Toronto", placeholder: true }] },
+    { name: "Montreal, QC", lat: 45.5017, lng: -73.5673, country: "Canada", continent: "North America", date: "Visited", description: "French-Canadian charm and culture.", highlight: "Old Montreal", photos: [{ src: "images/travel/montreal.jpg", caption: "Montreal", placeholder: true }] },
+    { name: "Quebec City, QC", lat: 46.8139, lng: -71.2080, country: "Canada", continent: "North America", date: "Visited", description: "Historic walled city with European feel.", highlight: "Château Frontenac", photos: [{ src: "images/travel/quebec.jpg", caption: "Quebec", placeholder: true }] },
+    
+    // Spain
+    { name: "Barcelona, Spain", lat: 41.3851, lng: 2.1734, country: "Spain", continent: "Europe", date: "Visited", description: "Gaudí's architectural masterpieces.", highlight: "La Sagrada Familia", photos: [{ src: "images/travel/barcelona.jpg", caption: "Barcelona", placeholder: true }] },
+    { name: "Ibiza, Spain", lat: 38.9067, lng: 1.4206, country: "Spain", continent: "Europe", date: "Visited", description: "Beautiful beaches and vibrant nightlife.", highlight: "Island paradise", photos: [{ src: "images/travel/ibiza.jpg", caption: "Ibiza", placeholder: true }] },
+    { name: "Sevilla, Spain", lat: 37.3891, lng: -5.9845, country: "Spain", continent: "Europe", date: "Visited", description: "Flamenco, tapas, and Andalusian culture.", highlight: "Plaza de España", photos: [{ src: "images/travel/sevilla.jpg", caption: "Sevilla", placeholder: true }] },
+    { name: "Madrid, Spain", lat: 40.4168, lng: -3.7038, country: "Spain", continent: "Europe", date: "Visited", description: "Spain's vibrant capital.", highlight: "Prado Museum", photos: [{ src: "images/travel/madrid.jpg", caption: "Madrid", placeholder: true }] },
+    
+    // Portugal
+    { name: "Porto, Portugal", lat: 41.1579, lng: -8.6291, country: "Portugal", continent: "Europe", date: "Visited", description: "Port wine and riverside charm.", highlight: "Douro River views", photos: [{ src: "images/travel/porto.jpg", caption: "Porto", placeholder: true }] },
+    { name: "Lisbon, Portugal", lat: 38.7223, lng: -9.1393, country: "Portugal", continent: "Europe", date: "Visited", description: "Historic capital with stunning views.", highlight: "Tram 28", photos: [{ src: "images/travel/lisbon.jpg", caption: "Lisbon", placeholder: true }] },
+    
+    // France
+    { name: "Lyon, France", lat: 45.7640, lng: 4.8357, country: "France", continent: "Europe", date: "Visited", description: "Gastronomic capital of France.", highlight: "French cuisine", photos: [{ src: "images/travel/lyon.jpg", caption: "Lyon", placeholder: true }] },
+    { name: "Paris, France", lat: 48.8566, lng: 2.3522, country: "France", continent: "Europe", date: "Visited", description: "The city of lights and romance.", highlight: "Eiffel Tower", photos: [{ src: "images/travel/paris.jpg", caption: "Paris", placeholder: true }] },
+    { name: "Montpellier, France", lat: 43.6108, lng: 3.8767, country: "France", continent: "Europe", date: "Visited", description: "Southern French charm.", highlight: "Mediterranean vibes", photos: [{ src: "images/travel/montpellier.jpg", caption: "Montpellier", placeholder: true }] },
+    { name: "Marseille, France", lat: 43.2965, lng: 5.3698, country: "France", continent: "Europe", date: "Visited", description: "Port city with Mediterranean culture.", highlight: "Old Port", photos: [{ src: "images/travel/marseille.jpg", caption: "Marseille", placeholder: true }] },
+    { name: "Nice, France", lat: 43.7102, lng: 7.2620, country: "France", continent: "Europe", date: "Visited", description: "French Riviera beauty.", highlight: "Promenade des Anglais", photos: [{ src: "images/travel/nice.jpg", caption: "Nice", placeholder: true }] },
+    { name: "Menton, France", lat: 43.7765, lng: 7.5042, country: "France", continent: "Europe", date: "Visited", description: "Beautiful coastal town near Italy.", highlight: "Lemon festival", photos: [{ src: "images/travel/menton.jpg", caption: "Menton", placeholder: true }] },
+    { name: "Chambéry, France", lat: 45.5647, lng: 5.9215, country: "France", continent: "Europe", date: "Visited", description: "Alpine town with history.", highlight: "Mountain views", photos: [{ src: "images/travel/chambery.jpg", caption: "Chambéry", placeholder: true }] },
+    { name: "Grenoble, France", lat: 45.1885, lng: 5.7245, country: "France", continent: "Europe", date: "Visited", description: "Gateway to the Alps.", highlight: "Mountain adventures", photos: [{ src: "images/travel/grenoble.jpg", caption: "Grenoble", placeholder: true }] },
+    { name: "Saint-Étienne, France", lat: 45.4397, lng: 4.3872, country: "France", continent: "Europe", date: "Visited", description: "Industrial heritage and culture.", highlight: "City exploration", photos: [{ src: "images/travel/saintetienne.jpg", caption: "Saint-Étienne", placeholder: true }] },
+    
+    // Monaco
+    { name: "Monaco", lat: 43.7384, lng: 7.4246, country: "Monaco", continent: "Europe", date: "Visited", description: "Luxury and glamour on the Mediterranean.", highlight: "Monte Carlo", photos: [{ src: "images/travel/monaco.jpg", caption: "Monaco", placeholder: true }] },
+    
+    // Iceland
+    { name: "Iceland", lat: 64.9631, lng: -19.0208, country: "Iceland", continent: "Europe", date: "Visited", description: "Land of fire and ice.", highlight: "Natural wonders", photos: [{ src: "images/travel/iceland.jpg", caption: "Iceland", placeholder: true }] },
+    
+    // Switzerland
+    { name: "Geneva, Switzerland", lat: 46.2044, lng: 6.1432, country: "Switzerland", continent: "Europe", date: "Visited", description: "International city with lake views.", highlight: "Jet d'Eau fountain", photos: [{ src: "images/travel/geneva.jpg", caption: "Geneva", placeholder: true }] },
+    { name: "Zurich, Switzerland", lat: 47.3769, lng: 8.5417, country: "Switzerland", continent: "Europe", date: "Visited", description: "Financial hub with Swiss charm.", highlight: "Lake Zurich", photos: [{ src: "images/travel/zurich.jpg", caption: "Zurich", placeholder: true }] },
+    
+    // Italy
+    { name: "Venice, Italy", lat: 45.4408, lng: 12.3155, country: "Italy", continent: "Europe", date: "Visited", description: "Romantic city of canals.", highlight: "Gondola rides", photos: [{ src: "images/travel/venice.jpg", caption: "Venice", placeholder: true }] },
+    { name: "Florence, Italy", lat: 43.7696, lng: 11.2558, country: "Italy", continent: "Europe", date: "Visited", description: "Renaissance art and architecture.", highlight: "Duomo cathedral", photos: [{ src: "images/travel/florence.jpg", caption: "Florence", placeholder: true }] },
+    { name: "Pisa, Italy", lat: 43.7228, lng: 10.4017, country: "Italy", continent: "Europe", date: "Visited", description: "Home of the famous leaning tower.", highlight: "Leaning Tower", photos: [{ src: "images/travel/pisa.jpg", caption: "Pisa", placeholder: true }] },
+    { name: "Rome, Italy", lat: 41.9028, lng: 12.4964, country: "Italy", continent: "Europe", date: "Visited", description: "Eternal city of history.", highlight: "Colosseum", photos: [{ src: "images/travel/rome.jpg", caption: "Rome", placeholder: true }] },
+    { name: "Turin, Italy", lat: 45.0703, lng: 7.6869, country: "Italy", continent: "Europe", date: "Visited", description: "Industrial city with elegance.", highlight: "Mole Antonelliana", photos: [{ src: "images/travel/turin.jpg", caption: "Turin", placeholder: true }] },
+    
+    // United Kingdom
+    { name: "London, UK", lat: 51.5074, lng: -0.1278, country: "United Kingdom", continent: "Europe", date: "Visited", description: "Historic capital with modern culture.", highlight: "Big Ben & London Eye", photos: [{ src: "images/travel/london.jpg", caption: "London", placeholder: true }] },
+    
+    // Middle East & Asia
+    { name: "Nepal", lat: 28.3949, lng: 84.1240, country: "Nepal", continent: "Asia", date: "Visited", description: "Himalayan kingdom.", highlight: "Mountain majesty", photos: [{ src: "images/travel/nepal.jpg", caption: "Nepal", placeholder: true }] },
+    { name: "Doha, Qatar", lat: 25.2854, lng: 51.5310, country: "Qatar", continent: "Asia", date: "Visited", description: "Modern Middle Eastern metropolis.", highlight: "Futuristic architecture", photos: [{ src: "images/travel/qatar.jpg", caption: "Qatar", placeholder: true }] },
+    { name: "Dubai, UAE", lat: 25.2048, lng: 55.2708, country: "UAE", continent: "Asia", date: "Visited", description: "City of superlatives.", highlight: "Burj Khalifa", photos: [{ src: "images/travel/dubai.jpg", caption: "Dubai", placeholder: true }] },
+    { name: "Muscat, Oman", lat: 23.5880, lng: 58.3829, country: "Oman", continent: "Asia", date: "Visited", description: "Arabian beauty and culture.", highlight: "Sultan Qaboos Mosque", photos: [{ src: "images/travel/oman.jpg", caption: "Oman", placeholder: true }] },
+    { name: "Saudi Arabia", lat: 23.8859, lng: 45.0792, country: "Saudi Arabia", continent: "Asia", date: "Visited", description: "Historic Arabian Peninsula.", highlight: "Cultural experience", photos: [{ src: "images/travel/saudi.jpg", caption: "Saudi Arabia", placeholder: true }] }
 ];
 
 // Initialize map
