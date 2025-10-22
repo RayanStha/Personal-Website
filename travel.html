@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel - My Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">My Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="travel.html" class="nav-link active">Travel</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Travel Hero -->
+    <section class="page-hero travel-hero">
+        <div class="container">
+            <h1 class="page-title">My Travel Adventures</h1>
+            <p class="page-subtitle">Explore the places I've been and the memories I've made</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container-full">
+            <div class="map-instructions">
+                <p><i class="fas fa-info-circle"></i> Click on the markers to see photos and details from each location</p>
+            </div>
+            <div id="travel-map"></div>
+        </div>
+    </section>
+
+    <!-- Travel Stats -->
+    <section class="travel-stats">
+        <div class="container">
+            <h2 class="section-title">Travel Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3 id="countries-count">0</h3>
+                    <p>Countries Visited</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-pin"></i>
+                    <h3 id="cities-count">0</h3>
+                    <p>Cities Explored</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-plane-departure"></i>
+                    <h3 id="continents-count">0</h3>
+                    <p>Continents Visited</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img id="modalImage" src="" alt="">
+                    <button class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-details">
+                        <p><i class="fas fa-calendar"></i> <span id="modalDate"></span></p>
+                        <p id="modalHighlight"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 My Personal Website. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/travel.js"></script>
+</body>
+</html>
+
