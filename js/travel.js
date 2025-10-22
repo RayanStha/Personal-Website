@@ -84,7 +84,68 @@ let currentPhotoIndex = 0;
 document.addEventListener('DOMContentLoaded', function() {
     initMap();
     updateTravelStats();
+    initTravelBackgroundGallery();
 });
+
+// Travel Background Gallery Carousel
+function initTravelBackgroundGallery() {
+    const slides = document.querySelectorAll('.travel-background-gallery .travel-bg-slide');
+    const indicatorsContainer = document.querySelector('.travel-section .travel-gallery-indicators');
+    let currentSlide = 0;
+    let autoPlayInterval;
+
+    if (!slides.length || !indicatorsContainer) return;
+
+    // Create indicators
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('gallery-indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    const indicators = document.querySelectorAll('.travel-gallery-indicators .gallery-indicator');
+
+    function updateSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            indicators[index].classList.remove('active');
+        });
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlides();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlides();
+        resetAutoPlay();
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Auto-play
+    autoPlayInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover over travel section
+    const travelSection = document.querySelector('.travel-section');
+    if (travelSection) {
+        travelSection.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        travelSection.addEventListener('mouseleave', () => {
+            resetAutoPlay();
+        });
+    }
+}
 
 function initMap() {
     // Initialize Leaflet map

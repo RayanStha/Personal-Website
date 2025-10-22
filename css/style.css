@@ -421,8 +421,73 @@ body {
 
 /* TRAVEL SECTION */
 .travel-section {
-    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
     position: relative;
+    overflow: hidden;
+}
+
+/* Background Gallery for Travel - Full Screen */
+.travel-background-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.travel-background-gallery .travel-bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.travel-background-gallery .travel-bg-slide.active {
+    opacity: 1;
+}
+
+.travel-background-gallery .travel-bg-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark Overlay for Travel section */
+.travel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.75) 0%, rgba(124, 58, 237, 0.75) 100%);
+    z-index: 2;
+}
+
+/* Travel Content - Overlaid on Background */
+.travel-content {
+    position: relative;
+    z-index: 3;
+}
+
+.travel-section .section-title,
+.travel-section .section-subtitle {
+    color: white;
+    text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+/* Travel Gallery Indicators */
+.travel-section .travel-gallery-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 4;
 }
 
 .travel-stats {
@@ -433,17 +498,19 @@ body {
 }
 
 .stat-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 1);
 }
 
 .stat-card i {
@@ -466,10 +533,11 @@ body {
 .map-instructions {
     text-align: center;
     padding: 15px;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     margin-bottom: 30px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .map-instructions i {
