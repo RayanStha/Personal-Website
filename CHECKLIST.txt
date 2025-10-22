@@ -1,0 +1,147 @@
+✅ PERSONAL WEBSITE SETUP CHECKLIST
+====================================
+
+PHASE 1: CONTENT PREPARATION
+-----------------------------
+[ ] Read GET-STARTED.md to understand the project
+[ ] Read QUICKSTART.md for step-by-step instructions
+
+ADD PHOTOS:
+[ ] Add profile photo as images/profile.jpg
+[ ] Add 3-5 homepage photos to images/home/ (photo1.jpg, photo2.jpg, etc.)
+[ ] Add travel photos to images/travel/ (named by location)
+
+UPDATE PERSONAL INFO:
+[ ] Update name in about.html
+[ ] Write your bio in about.html
+[ ] Update fun facts in about.html
+[ ] Update name in all page headers (index, about, travel, education, contact)
+[ ] Update footer text in all pages
+
+PHASE 2: TRAVEL MAP
+--------------------
+[ ] List all places you've traveled to
+[ ] Get coordinates for each location (use Google Maps)
+[ ] Open js/travel.js
+[ ] Update travelLocations array with your destinations
+[ ] Set placeholder: false for locations with photos
+[ ] Test map by opening travel.html in browser
+
+PHASE 3: EDUCATION & EXPERIENCE
+--------------------------------
+[ ] Open education.html
+[ ] Fill in your degree(s)
+[ ] Fill in your university/school
+[ ] Add work experience
+[ ] Update skills section
+[ ] Add projects and activities
+[ ] Add certifications/awards
+
+PHASE 4: CONTACT PAGE
+----------------------
+[ ] Update email address in contact.html
+[ ] Update location in contact.html
+[ ] Add LinkedIn URL in contact.html
+[ ] Add GitHub URL in contact.html
+[ ] Add other social media links
+[ ] (Optional) Set up Formspree for contact form
+
+PHASE 5: HOMEPAGE CUSTOMIZATION
+--------------------------------
+[ ] Open index.html
+[ ] Replace placeholder carousel slides with your photos
+[ ] Update carousel captions with your descriptions
+[ ] Update page titles
+[ ] Test carousel functionality in browser
+
+PHASE 6: LOCAL TESTING
+-----------------------
+[ ] Open index.html in web browser
+[ ] Test navigation - all links work
+[ ] Test carousel - slides advance automatically
+[ ] Test carousel controls - prev/next buttons work
+[ ] Open about.html - check all content
+[ ] Open travel.html - check map loads
+[ ] Click map pins - check photos display
+[ ] Open education.html - verify all sections
+[ ] Open contact.html - check contact info
+[ ] Test on mobile (resize browser window)
+[ ] Check browser console (F12) for errors
+[ ] All placeholder text removed
+
+PHASE 7: CUSTOMIZATION (OPTIONAL)
+----------------------------------
+[ ] Update color scheme in css/style.css
+[ ] Change logo text to your name/brand
+[ ] Add Google Analytics
+[ ] Set up contact form with Formspree
+[ ] Add custom domain (if you have one)
+
+PHASE 8: DEPLOYMENT
+-------------------
+[ ] Create GitHub account (if needed)
+[ ] Create repository: yourusername.github.io
+[ ] Push code to GitHub (see DEPLOYMENT.md)
+[ ] Enable GitHub Pages in repository settings
+[ ] Wait 2-5 minutes for deployment
+[ ] Visit https://yourusername.github.io
+[ ] Test all features on live site
+[ ] Test on actual mobile device
+
+PHASE 9: FINAL CHECKS
+---------------------
+[ ] All pages load correctly
+[ ] All images display
+[ ] Map works with pins
+[ ] Carousel auto-plays
+[ ] No broken links
+[ ] Mobile responsive works
+[ ] HTTPS is enabled
+[ ] Share site URL with a friend for feedback
+
+PHASE 10: SHARE & MAINTAIN
+---------------------------
+[ ] Add website URL to LinkedIn profile
+[ ] Add website URL to resume/CV
+[ ] Add website URL to email signature
+[ ] Share on social media
+[ ] Update regularly with new travels
+[ ] Add new experiences as they happen
+[ ] Keep photos fresh and current
+
+TROUBLESHOOTING CHECKLIST
+--------------------------
+If something doesn't work:
+[ ] Check browser console (F12) for errors
+[ ] Verify all file paths are correct
+[ ] Check that images are in correct folders
+[ ] Make sure you saved all changes
+[ ] Try hard refresh (Ctrl+Shift+R)
+[ ] Read DEPLOYMENT.md troubleshooting section
+[ ] Check that coordinates are numbers, not strings
+[ ] Verify internet connection (for map)
+
+QUICK REFERENCE
+---------------
+Local Testing: Open index.html in browser
+Find Coordinates: Google Maps > Right-click > Copy coordinates
+Browser Console: Press F12
+Color Customization: css/style.css (lines 10-17)
+Travel Locations: js/travel.js (travelLocations array)
+Contact Form: js/contact.js (set up Formspree)
+
+HELPFUL LINKS
+-------------
+- Full Documentation: README.md
+- Quick Start Guide: QUICKSTART.md
+- Deployment Guide: DEPLOYMENT.md
+- Getting Started: GET-STARTED.md
+- GitHub Pages: https://pages.github.com
+- Formspree: https://formspree.io
+- Google Maps: https://maps.google.com
+
+===================================
+Mark items as done by replacing [ ] with [✓]
+Save this file to track your progress!
+===================================
+
