@@ -96,10 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initHomeGallery();
 });
 
-// Home Gallery Carousel
+// Home Gallery Carousel - Full Background
 function initHomeGallery() {
-    const slides = document.querySelectorAll('.gallery-slide');
-    const indicatorsContainer = document.querySelector('.gallery-indicators');
+    const slides = document.querySelectorAll('.home-background-gallery .gallery-slide');
+    const indicatorsContainer = document.querySelector('.home-section .gallery-indicators');
     let currentSlide = 0;
     let autoPlayInterval;
 
@@ -138,19 +138,19 @@ function initHomeGallery() {
 
     function resetAutoPlay() {
         clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(nextSlide, 4000);
+        autoPlayInterval = setInterval(nextSlide, 5000);
     }
 
     // Auto-play
-    autoPlayInterval = setInterval(nextSlide, 4000);
+    autoPlayInterval = setInterval(nextSlide, 5000);
 
-    // Pause on hover
-    const galleryCarousel = document.querySelector('.gallery-carousel');
-    if (galleryCarousel) {
-        galleryCarousel.addEventListener('mouseenter', () => {
+    // Pause on hover over home section
+    const homeSection = document.querySelector('.home-section');
+    if (homeSection) {
+        homeSection.addEventListener('mouseenter', () => {
             clearInterval(autoPlayInterval);
         });
-        galleryCarousel.addEventListener('mouseleave', () => {
+        homeSection.addEventListener('mouseleave', () => {
             resetAutoPlay();
         });
     }
