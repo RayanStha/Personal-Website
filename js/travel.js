@@ -13,6 +13,10 @@ const travelLocations = [
     { name: "Montreal, QC", lat: 45.5017, lng: -73.5673, country: "Canada", continent: "North America", date: "Visited", description: "French-Canadian charm and culture.", highlight: "Old Montreal", photos: [{ src: "images/travel/montreal.jpg", caption: "Montreal", placeholder: true }] },
     { name: "Quebec City, QC", lat: 46.8139, lng: -71.2080, country: "Canada", continent: "North America", date: "Visited", description: "Historic walled city with European feel.", highlight: "Château Frontenac", photos: [{ src: "images/travel/quebec.jpg", caption: "Quebec", placeholder: true }] },
     
+    // Mexico
+    { name: "Playa del Carmen, Mexico", lat: 20.6296, lng: -87.0739, country: "Mexico", continent: "North America", date: "Visited", description: "Beautiful Caribbean beaches and vibrant nightlife.", highlight: "Beach paradise", photos: [{ src: "images/travel/playadelcarmen.jpg", caption: "Playa del Carmen", placeholder: true }] },
+    { name: "Tulum, Mexico", lat: 20.2114, lng: -87.4654, country: "Mexico", continent: "North America", date: "Visited", description: "Ancient Mayan ruins overlooking turquoise waters.", highlight: "Mayan temples by the sea", photos: [{ src: "images/travel/tulum.jpg", caption: "Tulum", placeholder: true }] },
+    
     // Spain
     { name: "Barcelona, Spain", lat: 41.3851, lng: 2.1734, country: "Spain", continent: "Europe", date: "Visited", description: "Gaudí's architectural masterpieces.", highlight: "La Sagrada Familia", photos: [{ src: "images/travel/barcelona.jpg", caption: "Barcelona", placeholder: true }] },
     { name: "Ibiza, Spain", lat: 38.9067, lng: 1.4206, country: "Spain", continent: "Europe", date: "Visited", description: "Beautiful beaches and vibrant nightlife.", highlight: "Island paradise", photos: [{ src: "images/travel/ibiza.jpg", caption: "Ibiza", placeholder: true }] },
