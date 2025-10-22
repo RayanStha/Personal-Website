@@ -53,7 +53,7 @@ body {
     left: 30px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 9999;
 }
 
 .nav-items {
@@ -309,6 +309,7 @@ body {
 /* ABOUT SECTION */
 .about-section {
     background: var(--bg-white);
+    position: relative;
 }
 
 .section-title {
@@ -432,6 +433,7 @@ body {
 /* TRAVEL SECTION */
 .travel-section {
     background: linear-gradient(to bottom, var(--bg-light), var(--bg-white));
+    position: relative;
 }
 
 .travel-stats {
@@ -496,6 +498,7 @@ body {
 /* EDUCATION SECTION */
 .education-section {
     background: var(--bg-white);
+    position: relative;
 }
 
 .resume-section {
@@ -661,6 +664,7 @@ body {
 /* CONTACT SECTION */
 .contact-section {
     background: var(--bg-light);
+    position: relative;
 }
 
 .contact-grid {

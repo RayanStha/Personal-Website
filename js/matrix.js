@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: -1;
         pointer-events: none;
-        opacity: 0.15;
+        opacity: 0.08;
     `;
     document.body.insertBefore(matrixCanvas, document.body.firstChild);
     
