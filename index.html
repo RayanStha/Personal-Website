@@ -6,155 +6,427 @@
     <title>My Personal Website</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">My Portfolio</div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Me</a></li>
-                <li><a href="travel.html" class="nav-link">Travel</a></li>
-                <li><a href="education.html" class="nav-link">Education</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar-nav">
+        <div class="nav-items">
+            <a href="#home" class="nav-item active" data-section="home">
+                <div class="nav-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <div class="nav-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="nav-label">About Me</span>
+            </a>
+            <a href="#travel" class="nav-item" data-section="travel">
+                <div class="nav-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <span class="nav-label">Travel</span>
+            </a>
+            <a href="#education" class="nav-item" data-section="education">
+                <div class="nav-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="nav-label">Education</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <div class="nav-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="nav-label">Contact</span>
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Welcome to My World</h1>
-            <p class="hero-subtitle">Explore my journey through life and travels</p>
-            <a href="about.html" class="cta-button">Learn More About Me</a>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="section home-section">
+            <div class="home-content">
+                <div class="profile-area">
+                    <div class="profile-image-container">
+                        <div class="placeholder-image profile-main">
+                            <i class="fas fa-user-circle"></i>
+                            <p>Upload your profile photo</p>
+                            <span class="image-note">Replace with: images/profile.jpg</span>
+                        </div>
+                    </div>
+                    <h1 class="profile-name">Your Name</h1>
+                    <div class="typing-container">
+                        <span class="typing-prefix">I am a </span>
+                        <span class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-media-links">
+                        <a href="https://github.com/yourusername" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://instagram.com/yourusername" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/yourusername" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:your.email@example.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Photo Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">My Journey in Pictures</h2>
-            <div class="carousel">
-                <div class="carousel-container">
-                    <div class="carousel-slide active">
-                        <div class="placeholder-image">
-                            <i class="fas fa-camera"></i>
-                            <p>Upload your travel photo here</p>
-                            <span class="image-note">Replace with: images/home/photo1.jpg</span>
+                <!-- Photo Gallery Carousel -->
+                <div class="home-gallery">
+                    <div class="gallery-carousel">
+                        <div class="gallery-slide active">
+                            <div class="placeholder-image">
+                                <i class="fas fa-camera"></i>
+                                <p>Upload your photo here</p>
+                                <span class="image-note">Replace with: images/home/photo1.jpg</span>
+                            </div>
                         </div>
-                        <div class="carousel-caption">
-                            <h3>Photo 1 Title</h3>
-                            <p>Add your caption here</p>
+                        <div class="gallery-slide">
+                            <div class="placeholder-image">
+                                <i class="fas fa-camera"></i>
+                                <p>Upload your photo here</p>
+                                <span class="image-note">Replace with: images/home/photo2.jpg</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="placeholder-image">
-                            <i class="fas fa-camera"></i>
-                            <p>Upload your travel photo here</p>
-                            <span class="image-note">Replace with: images/home/photo2.jpg</span>
+                        <div class="gallery-slide">
+                            <div class="placeholder-image">
+                                <i class="fas fa-camera"></i>
+                                <p>Upload your photo here</p>
+                                <span class="image-note">Replace with: images/home/photo3.jpg</span>
+                            </div>
                         </div>
-                        <div class="carousel-caption">
-                            <h3>Photo 2 Title</h3>
-                            <p>Add your caption here</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="placeholder-image">
-                            <i class="fas fa-camera"></i>
-                            <p>Upload your travel photo here</p>
-                            <span class="image-note">Replace with: images/home/photo3.jpg</span>
-                        </div>
-                        <div class="carousel-caption">
-                            <h3>Photo 3 Title</h3>
-                            <p>Add your caption here</p>
+                        <div class="gallery-slide">
+                            <div class="placeholder-image">
+                                <i class="fas fa-camera"></i>
+                                <p>Upload your photo here</p>
+                                <span class="image-note">Replace with: images/home/photo4.jpg</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-slide">
-                        <div class="placeholder-image">
-                            <i class="fas fa-camera"></i>
-                            <p>Upload your travel photo here</p>
-                            <span class="image-note">Replace with: images/home/photo4.jpg</span>
-                        </div>
-                        <div class="carousel-caption">
-                            <h3>Photo 4 Title</h3>
-                            <p>Add your caption here</p>
-                        </div>
+                    <div class="gallery-indicators"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content-grid">
+                    <div class="about-text">
+                        <h3>Hello, I'm [Your Name]</h3>
+                        <p class="lead">A passionate traveler and lifelong learner.</p>
+                        <p>
+                            Welcome to my personal corner of the internet! I'm a [your profession/field] 
+                            with a deep passion for exploring the world and experiencing different cultures.
+                        </p>
+                        <p>
+                            My journey has taken me across continents, where I've had the privilege of 
+                            meeting incredible people, tasting amazing food, and creating unforgettable memories.
+                        </p>
+                        <p>
+                            When I'm not traveling, you can find me [your hobbies/interests]. 
+                            I believe that life is about continuous growth, meaningful connections, 
+                            and embracing new experiences.
+                        </p>
                     </div>
-                    <div class="carousel-slide">
-                        <div class="placeholder-image">
-                            <i class="fas fa-camera"></i>
-                            <p>Upload your travel photo here</p>
-                            <span class="image-note">Replace with: images/home/photo5.jpg</span>
+                </div>
+
+                <!-- Interests Section -->
+                <div class="interests-section">
+                    <h3 class="subsection-title">My Interests</h3>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <h4>Travel</h4>
+                            <p>Exploring new destinations and immersing myself in different cultures</p>
                         </div>
-                        <div class="carousel-caption">
-                            <h3>Photo 5 Title</h3>
-                            <p>Add your caption here</p>
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-camera-retro"></i>
+                            </div>
+                            <h4>Photography</h4>
+                            <p>Capturing moments and telling stories through the lens</p>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Learning</h4>
+                            <p>Constantly seeking knowledge and personal growth</p>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <h4>Soccer</h4>
+                            <p>Playing and watching the beautiful game</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-                <div class="carousel-indicators"></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Quick Links Section -->
-    <section class="quick-links">
-        <div class="container">
-            <h2 class="section-title">Explore More</h2>
-            <div class="cards-grid">
-                <a href="about.html" class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-user"></i>
+                <!-- Fun Facts -->
+                <div class="fun-facts">
+                    <h3 class="subsection-title">Fun Facts About Me</h3>
+                    <div class="facts-grid">
+                        <div class="fact-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h4>[X]</h4>
+                            <p>Countries Visited</p>
+                        </div>
+                        <div class="fact-item">
+                            <i class="fas fa-language"></i>
+                            <h4>[X]</h4>
+                            <p>Languages Spoken</p>
+                        </div>
+                        <div class="fact-item">
+                            <i class="fas fa-mountain"></i>
+                            <h4>[X]</h4>
+                            <p>Mountains Climbed</p>
+                        </div>
+                        <div class="fact-item">
+                            <i class="fas fa-passport"></i>
+                            <h4>[X]</h4>
+                            <p>Passport Stamps</p>
+                        </div>
                     </div>
-                    <h3>About Me</h3>
-                    <p>Learn more about my story and passions</p>
-                </a>
-                <a href="travel.html" class="card">
-                    <div class="card-icon">
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAVEL SECTION -->
+        <section id="travel" class="section travel-section">
+            <div class="container">
+                <h2 class="section-title">My Travel Adventures</h2>
+                <p class="section-subtitle">Explore the places I've been and the memories I've made</p>
+                
+                <!-- Travel Stats -->
+                <div class="travel-stats">
+                    <div class="stat-card">
                         <i class="fas fa-globe-americas"></i>
+                        <h3 id="countries-count">0</h3>
+                        <p>Countries Visited</p>
                     </div>
-                    <h3>Travel Map</h3>
-                    <p>Interactive map of my adventures around the world</p>
-                </a>
-                <a href="education.html" class="card">
-                    <div class="card-icon">
+                    <div class="stat-card">
+                        <i class="fas fa-map-pin"></i>
+                        <h3 id="cities-count">0</h3>
+                        <p>Cities Explored</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <h3 id="continents-count">0</h3>
+                        <p>Continents Visited</p>
+                    </div>
+                </div>
+
+                <div class="map-instructions">
+                    <p><i class="fas fa-info-circle"></i> Click on the markers to see photos and details from each location</p>
+                </div>
+                <div id="travel-map"></div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <h2 class="section-title">Education & Experience</h2>
+                <p class="section-subtitle">My academic journey and professional accomplishments</p>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <div class="section-header">
                         <i class="fas fa-graduation-cap"></i>
+                        <h3>Education</h3>
                     </div>
-                    <h3>Education</h3>
-                    <p>My academic journey and achievements</p>
-                </a>
-                <a href="contact.html" class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-envelope"></i>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">
+                                    <i class="fas fa-calendar"></i>
+                                    [Start Year] - [End Year]
+                                </div>
+                                <h4>[Degree Name]</h4>
+                                <h5>[University Name]</h5>
+                                <p>[Location]</p>
+                                <ul class="achievement-list">
+                                    <li>Major: [Your Major]</li>
+                                    <li>GPA: [Your GPA]</li>
+                                    <li>Relevant Coursework: [List courses]</li>
+                                    <li>Honors & Awards: [List any honors]</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Contact</h3>
-                    <p>Get in touch with me</p>
-                </a>
+                </div>
+
+                <!-- Experience -->
+                <div class="resume-section">
+                    <div class="section-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Experience</h3>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">
+                                    <i class="fas fa-calendar"></i>
+                                    [Start Date] - [End Date/Present]
+                                </div>
+                                <h4>[Job Title]</h4>
+                                <h5>[Company Name]</h5>
+                                <p>[Location]</p>
+                                <ul class="achievement-list">
+                                    <li>Responsibility/Achievement 1</li>
+                                    <li>Responsibility/Achievement 2</li>
+                                    <li>Responsibility/Achievement 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume-section">
+                    <div class="section-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Skills & Expertise</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Technical Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Skill 1</span>
+                                <span class="skill-tag">Skill 2</span>
+                                <span class="skill-tag">Skill 3</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Soft Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Communication</span>
+                                <span class="skill-tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">I'd love to hear from you</p>
+
+                <div class="contact-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-details">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-details">
+                                    <h4>Location</h4>
+                                    <p>City, Country</p>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="info-details">
+                                    <h4>LinkedIn</h4>
+                                    <p><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img id="modalImage" src="" alt="">
+                    <button class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-details">
+                        <p><i class="fas fa-calendar"></i> <span id="modalDate"></span></p>
+                        <p id="modalHighlight"></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 My Personal Website. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/travel.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
-

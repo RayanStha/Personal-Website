@@ -21,9 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Here you would normally send the data to a server or service
-            // For now, we'll just show a success message
-            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
             // OPTION 1: Using Formspree (recommended for GitHub Pages)
             // Uncomment and replace YOUR_FORM_ID with your Formspree form ID
             /*
@@ -38,20 +41,22 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
                 contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
             })
             .catch(error => {
                 showMessage('Oops! Something went wrong. Please try again.', 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
             });
             */
 
-            // OPTION 2: Using EmailJS (another popular option)
-            // See https://www.emailjs.com/ for setup instructions
-
-            // OPTION 3: Simple demonstration (current implementation)
-            // This just shows a success message without actually sending
+            // OPTION 2: Simple demonstration (current implementation)
             setTimeout(() => {
                 showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
                 contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
                 console.log('Form Data:', formData); // For testing
             }, 1000);
         });
@@ -78,9 +83,17 @@ function showMessage(message, type) {
     formMessage.textContent = message;
     formMessage.className = `form-message ${type}`;
     
+    // Scroll to message
+    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
     // Hide message after 5 seconds
     setTimeout(() => {
-        formMessage.style.display = 'none';
+        formMessage.style.opacity = '0';
+        formMessage.style.transition = 'opacity 0.5s';
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+            formMessage.style.opacity = '1';
+        }, 500);
     }, 5000);
 }
 
@@ -109,4 +122,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
