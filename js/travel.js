@@ -50,7 +50,7 @@ const travelLocations = [
     { name: "Monaco", lat: 43.7384, lng: 7.4246, country: "Monaco", continent: "Europe", date: "Visited", description: "Luxury and glamour on the Mediterranean.", highlight: "Monte Carlo", photos: [{ src: "images/travel/monaco.jpg", caption: "Monaco", placeholder: true }] },
     
     // Iceland
-    { name: "Iceland", lat: 64.9631, lng: -19.0208, country: "Iceland", continent: "Europe", date: "Visited", description: "Land of fire and ice.", highlight: "Natural wonders", photos: [{ src: "images/travel/iceland.jpg", caption: "Iceland", placeholder: true }] },
+    { name: "Iceland", lat: 64.9631, lng: -19.0208, country: "Iceland", wholeCountry: true, continent: "Europe", date: "Visited", description: "Land of fire and ice.", highlight: "Natural wonders", photos: [{ src: "images/travel/iceland.jpg", caption: "Iceland", placeholder: true }] },
     
     // Switzerland
     { name: "Geneva, Switzerland", lat: 46.2044, lng: 6.1432, country: "Switzerland", continent: "Europe", date: "Visited", description: "International city with lake views.", highlight: "Jet d'Eau fountain", photos: [{ src: "images/travel/geneva.jpg", caption: "Geneva", placeholder: true }] },
@@ -67,12 +67,12 @@ const travelLocations = [
     { name: "London, UK", lat: 51.5074, lng: -0.1278, country: "United Kingdom", continent: "Europe", date: "Visited", description: "Historic capital with modern culture.", highlight: "Big Ben & London Eye", photos: [{ src: "images/travel/london.jpg", caption: "London", placeholder: true }] },
     
     // Middle East & Asia
-    { name: "Nepal", lat: 28.3949, lng: 84.1240, country: "Nepal", continent: "Asia", date: "Visited", description: "Himalayan kingdom.", highlight: "Mountain majesty", photos: [{ src: "images/travel/nepal.jpg", caption: "Nepal", placeholder: true }] },
+    { name: "Nepal", lat: 28.3949, lng: 84.1240, country: "Nepal", wholeCountry: true, continent: "Asia", date: "Visited", description: "Himalayan kingdom.", highlight: "Mountain majesty", photos: [{ src: "images/travel/nepal.jpg", caption: "Nepal", placeholder: true }] },
     { name: "Doha, Qatar", lat: 25.2854, lng: 51.5310, country: "Qatar", continent: "Asia", date: "Visited", description: "Modern Middle Eastern metropolis.", highlight: "Futuristic architecture", photos: [{ src: "images/travel/qatar.jpg", caption: "Qatar", placeholder: true }] },
     { name: "Dubai, UAE", lat: 25.2048, lng: 55.2708, country: "UAE", continent: "Asia", date: "Visited", description: "City of superlatives.", highlight: "Burj Khalifa", photos: [{ src: "images/travel/dubai.jpg", caption: "Dubai", placeholder: true }] },
     { name: "Abu Dhabi, UAE", lat: 24.4539, lng: 54.3773, country: "UAE", continent: "Asia", date: "Visited", description: "Capital of UAE with Grand Mosque and F1 racing.", highlight: "Abu Dhabi F1 Grand Prix", photos: [{ src: "images/travel/abudhabi.jpg", caption: "Abu Dhabi", placeholder: true }] },
     { name: "Muscat, Oman", lat: 23.5880, lng: 58.3829, country: "Oman", continent: "Asia", date: "Visited", description: "Arabian beauty and culture.", highlight: "Sultan Qaboos Mosque", photos: [{ src: "images/travel/oman.jpg", caption: "Oman", placeholder: true }] },
-    { name: "Saudi Arabia", lat: 23.8859, lng: 45.0792, country: "Saudi Arabia", continent: "Asia", date: "Visited", description: "Historic Arabian Peninsula.", highlight: "Cultural experience", photos: [{ src: "images/travel/saudi.jpg", caption: "Saudi Arabia", placeholder: true }] }
+    { name: "Saudi Arabia", lat: 23.8859, lng: 45.0792, country: "Saudi Arabia", wholeCountry: true, continent: "Asia", date: "Visited", description: "Historic Arabian Peninsula.", highlight: "Cultural experience", photos: [{ src: "images/travel/saudi.jpg", caption: "Saudi Arabia", placeholder: true }] }
 ];
 
 // Initialize map
@@ -191,7 +191,8 @@ function updateModalImage() {
 function updateTravelStats() {
     const countries = new Set(travelLocations.map(loc => loc.country));
     const continents = new Set(travelLocations.map(loc => loc.continent));
-    const cities = travelLocations.length;
+    // Pins marked wholeCountry are a country, not a specific city
+    const cities = travelLocations.filter(loc => !loc.wholeCountry).length;
 
     document.getElementById('countries-count').textContent = countries.size;
     document.getElementById('continents-count').textContent = continents.size;
