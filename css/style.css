@@ -233,6 +233,23 @@ a:hover {
     color: var(--green);
 }
 
+.tmux-resume {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    color: #000;
+    background: var(--amber);
+    font-weight: 600;
+}
+
+.tmux-resume:hover {
+    color: #000;
+    background: var(--green);
+    text-shadow: none;
+    animation: none;
+}
+
 .tmux-status {
     display: flex;
     align-items: center;
@@ -509,6 +526,38 @@ a:hover {
     color: #000;
     text-shadow: none;
     box-shadow: var(--glow-strong);
+}
+
+.social-link.resume-link {
+    border-color: var(--amber);
+    color: var(--amber);
+}
+
+.social-link.resume-link:hover {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #000;
+}
+
+.resume-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    margin: -20px 0 36px;
+}
+
+.resume-cta a {
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    padding: 4px 12px;
+    font-weight: 600;
+}
+
+.resume-cta a:hover {
+    background: var(--amber);
+    color: #000;
+    text-shadow: none;
 }
 
 .scroll-hint {
@@ -1453,6 +1502,11 @@ a:hover {
     .tmux-session,
     .tmux-status {
         display: none;
+    }
+
+    .tmux-resume {
+        padding: 0 10px;
+        font-size: 12px;
     }
 
     .nav-item {
