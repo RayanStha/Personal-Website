@@ -89,80 +89,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Travel Background Gallery Carousel
 function initTravelBackgroundGallery() {
-    const slides = document.querySelectorAll('.travel-background-gallery .travel-bg-slide');
-    const indicatorsContainer = document.querySelector('.travel-section .travel-gallery-indicators');
-    let currentSlide = 0;
-    let autoPlayInterval;
-
-    if (!slides.length || !indicatorsContainer) return;
-
-    // Create indicators
-    slides.forEach((_, index) => {
-        const indicator = document.createElement('div');
-        indicator.classList.add('gallery-indicator');
-        if (index === 0) indicator.classList.add('active');
-        indicator.addEventListener('click', () => goToSlide(index));
-        indicatorsContainer.appendChild(indicator);
-    });
-
-    const indicators = document.querySelectorAll('.travel-gallery-indicators .gallery-indicator');
-
-    function updateSlides() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            indicators[index].classList.remove('active');
-        });
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlides();
-    }
-
-    function goToSlide(index) {
-        currentSlide = index;
-        updateSlides();
-        resetAutoPlay();
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(nextSlide, 5000);
-    }
-
-    // Auto-play
-    autoPlayInterval = setInterval(nextSlide, 5000);
-
-    // Pause on hover over travel section
-    const travelSection = document.querySelector('.travel-section');
-    if (travelSection) {
-        travelSection.addEventListener('mouseenter', () => {
-            clearInterval(autoPlayInterval);
-        });
-        travelSection.addEventListener('mouseleave', () => {
-            resetAutoPlay();
-        });
-    }
+    initSlideshow('.travel-background-gallery .travel-bg-slide', '.travel-section .travel-gallery-indicators');
 }
 
 function initMap() {
     // Initialize Leaflet map
     map = L.map('travel-map').setView([20, 0], 2);
 
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
+    // OpenStreetMap tiles - inverted and tinted green in CSS (.leaflet-tile-pane)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 18,
     }).addTo(map);
 
-    // Custom icon for markers
+    // Glowing phosphor pin
     const customIcon = L.divIcon({
         className: 'custom-marker',
-        html: '<div style="background: linear-gradient(135deg, #2563eb, #7c3aed); width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;"><i class="fas fa-map-pin"></i></div>',
-        iconSize: [30, 30],
-        iconAnchor: [15, 15]
+        html: '<div class="pin"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+        popupAnchor: [0, -8]
     });
 
     // Add markers for each location
@@ -170,21 +116,13 @@ function initMap() {
         const marker = L.marker([location.lat, location.lng], { icon: customIcon })
             .addTo(map)
             .bindPopup(`
-                <div style="text-align: center; min-width: 150px;">
-                    <h3 style="margin: 0 0 5px 0; font-size: 1.1rem;">${location.name}</h3>
-                    <p style="margin: 0 0 10px 0; color: #666;">${location.date}</p>
-                    <button onclick="openLocationModal(${index})" style="
-                        background: linear-gradient(135deg, #2563eb, #7c3aed);
-                        color: white;
-                        border: none;
-                        padding: 8px 16px;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        font-weight: 600;
-                    ">View Details</button>
+                <div class="popup-card">
+                    <h3>&gt; ${location.name}</h3>
+                    <p>${location.country} &middot; ${location.date}</p>
+                    <button class="popup-btn" onclick="openLocationModal(${index})">[ view details ]</button>
                 </div>
             `);
-        
+
         markers.push(marker);
     });
 }
@@ -218,33 +156,23 @@ function updateModalImage() {
     if (photo.placeholder) {
         // Create placeholder
         const placeholder = document.createElement('div');
-        placeholder.style.cssText = `
-            width: 100%;
-            height: 600px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        `;
+        placeholder.className = 'photo-placeholder';
         placeholder.innerHTML = `
-            <i class="fas fa-camera" style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.8;"></i>
-            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Upload your photo here</p>
-            <p style="font-size: 0.9rem; opacity: 0.7; font-style: italic;">${photo.src}</p>
-            <p style="margin-top: 1rem; opacity: 0.9;">${photo.caption}</p>
+            <i class="fas fa-camera"></i>
+            <p class="ph-caption">${photo.caption}</p>
+            <p>[ no image ] ${photo.src}</p>
         `;
         modalImage.replaceWith(placeholder);
         placeholder.id = 'modalImage';
     } else {
-        if (modalImage.tagName !== 'IMG') {
-            const img = document.createElement('img');
+        let img = modalImage;
+        if (img.tagName !== 'IMG') {
+            img = document.createElement('img');
             img.id = 'modalImage';
-            document.getElementById('modalImage').replaceWith(img);
+            modalImage.replaceWith(img);
         }
-        modalImage.src = photo.src;
-        modalImage.alt = photo.caption;
+        img.src = photo.src;
+        img.alt = photo.caption;
     }
 
     // Hide/show navigation buttons based on number of photos
@@ -268,6 +196,12 @@ function updateTravelStats() {
     document.getElementById('countries-count').textContent = countries.size;
     document.getElementById('continents-count').textContent = continents.size;
     document.getElementById('cities-count').textContent = cities;
+
+    // Keep the About text and fun facts in sync with the map data
+    const stats = { countries: countries.size, cities: cities, continents: continents.size };
+    document.querySelectorAll('[data-stat]').forEach(el => {
+        el.textContent = stats[el.dataset.stat];
+    });
 
     // Animate counters
     animateCounter('countries-count', countries.size);

@@ -3,118 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Rayan Shrestha - Security Engineer. Zero Trust, cloud security, network security and incident response.">
+    <meta name="theme-color" content="#030603">
+    <title>Rayan Shrestha // guest@rayan-sec</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar-nav">
-        <div class="nav-items">
-            <a href="#home" class="nav-item active" data-section="home">
-                <div class="nav-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <span class="nav-label">Home</span>
-            </a>
-            <a href="#about" class="nav-item" data-section="about">
-                <div class="nav-icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <span class="nav-label">About Me</span>
-            </a>
-            <a href="#travel" class="nav-item" data-section="travel">
-                <div class="nav-icon">
-                    <i class="fas fa-globe-americas"></i>
-                </div>
-                <span class="nav-label">Travel</span>
-            </a>
-            <a href="#education" class="nav-item" data-section="education">
-                <div class="nav-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <span class="nav-label">Education</span>
-            </a>
-            <a href="#contact" class="nav-item" data-section="contact">
-                <div class="nav-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <span class="nav-label">Contact</span>
-            </a>
+<body class="booting">
+    <!-- Boot Sequence -->
+    <div id="boot" class="boot" aria-hidden="true">
+        <pre class="boot-log" id="bootLog"></pre>
+        <div class="boot-skip">[ press any key or click to skip ]</div>
+    </div>
+
+    <!-- Background Effects -->
+    <canvas id="matrix" class="matrix" aria-hidden="true"></canvas>
+    <div class="crt" aria-hidden="true"></div>
+
+    <!-- tmux-style Status Bar -->
+    <nav class="tmux-bar" aria-label="Main navigation">
+        <span class="tmux-session">[rayan-sec]</span>
+        <div class="tmux-tabs">
+            <a href="#home" class="nav-item active" data-section="home"><span class="tab-num">0:</span>home</a>
+            <a href="#about" class="nav-item" data-section="about"><span class="tab-num">1:</span>about</a>
+            <a href="#projects" class="nav-item" data-section="projects"><span class="tab-num">2:</span>projects</a>
+            <a href="#education" class="nav-item" data-section="education"><span class="tab-num">3:</span>experience</a>
+            <a href="#travel" class="nav-item" data-section="travel"><span class="tab-num">4:</span>travel</a>
+            <a href="#contact" class="nav-item" data-section="contact"><span class="tab-num">5:</span>contact</a>
         </div>
+        <span class="tmux-status"><span class="status-dot"></span><span id="tmuxClock">--:--</span></span>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        
+
         <!-- HOME SECTION -->
         <section id="home" class="section home-section">
             <!-- Background Photo Gallery Carousel -->
-            <div class="home-background-gallery">
+            <div class="home-background-gallery photo-bg">
                 <div class="gallery-slide active">
-                    <img src="images/home/photo1.jpg" alt="Photo 1">
+                    <img src="images/home/photo1.jpg" alt="">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo2.jpg" alt="Photo 2">
+                    <img src="images/home/photo2.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo3.jpg" alt="Photo 3">
+                    <img src="images/home/photo3.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo4.jpg" alt="Photo 4">
+                    <img src="images/home/photo4.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo5.jpg" alt="Photo 5">
+                    <img src="images/home/photo5.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo6.jpg" alt="Photo 6">
+                    <img src="images/home/photo6.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo7.jpg" alt="Photo 7">
+                    <img src="images/home/photo7.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo8.jpg" alt="Photo 8">
+                    <img src="images/home/photo8.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo9.jpg" alt="Photo 9">
+                    <img src="images/home/photo9.jpg" alt="" loading="lazy">
                 </div>
                 <div class="gallery-slide">
-                    <img src="images/home/photo10.jpg" alt="Photo 10">
+                    <img src="images/home/photo10.jpg" alt="" loading="lazy">
                 </div>
-                <!-- Dark Overlay for better text readability -->
-                <div class="home-overlay"></div>
+                <div class="photo-tint"></div>
             </div>
 
-            <!-- Profile Content Overlay -->
+            <!-- Profile Terminal -->
             <div class="home-content">
-                <div class="profile-area">
-                    <h1 class="profile-name">Rayan Shrestha</h1>
-                    <div class="typing-container">
-                        <span class="typing-prefix">I am a </span>
-                        <span class="typing-text"></span>
-                        <span class="cursor">|</span>
+                <div class="term-window hero-window">
+                    <div class="term-titlebar">
+                        <span class="term-dots"><i></i><i></i><i></i></span>
+                        <span class="term-title">guest@rayan-sec: ~ (ssh)</span>
                     </div>
-                    
-                    <!-- Social Media Links -->
-                    <div class="social-media-links">
-                        <a href="https://github.com/yourusername" target="_blank" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://instagram.com/yourusername" target="_blank" class="social-link" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/yourusername" target="_blank" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="mailto:your.email@example.com" class="social-link" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="term-body">
+                        <p class="dim">Last login: <span id="lastLogin"></span> from 10.0.13.37</p>
+                        <p><span class="prompt">guest@rayan-sec:~$</span> whoami</p>
+                        <h1 class="profile-name glitch" data-text="Rayan Shrestha">Rayan Shrestha</h1>
+                        <p><span class="prompt">guest@rayan-sec:~$</span> cat role.txt</p>
+                        <p class="typing-container">
+                            <span class="typing-prefix">&gt; I am a </span><span class="typing-text"></span><span class="cursor">&#9608;</span>
+                        </p>
+                        <p><span class="prompt">guest@rayan-sec:~$</span> ls ~/links</p>
+
+                        <!-- Social Media Links -->
+                        <div class="social-media-links">
+                            <a href="https://github.com/RayanStha" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i><span>github</span>
+                            </a>
+                            <a href="https://linkedin.com/in/rayanshrestha" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i><span>linkedin</span>
+                            </a>
+                            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" class="social-link" title="Instagram">
+                                <i class="fab fa-instagram"></i><span>instagram</span>
+                            </a>
+                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" class="social-link" title="Twitter">
+                                <i class="fab fa-twitter"></i><span>twitter</span>
+                            </a>
+                            <a href="mailto:rayansth141@gmail.com" class="social-link" title="Email">
+                                <i class="fas fa-envelope"></i><span>email</span>
+                            </a>
+                        </div>
+                        <p><span class="prompt">guest@rayan-sec:~$</span> <span class="cursor">&#9608;</span></p>
                     </div>
                 </div>
+                <a href="#about" class="scroll-hint">[ scroll &darr; ]</a>
             </div>
 
             <!-- Gallery Indicators -->
@@ -124,9 +126,14 @@
         <!-- ABOUT SECTION -->
         <section id="about" class="section about-section">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content-grid">
-                    <div class="about-text">
+                <h2 class="section-title"><span class="prompt">guest@rayan-sec:~$</span> <span class="glitch" data-text="cat about.txt">cat about.txt</span></h2>
+
+                <div class="term-window">
+                    <div class="term-titlebar">
+                        <span class="term-dots"><i></i><i></i><i></i></span>
+                        <span class="term-title">~/about.txt</span>
+                    </div>
+                    <div class="term-body about-text">
                         <p>
                             Rayan is a Security Engineer III at Comcast, where he leads Zero Trust micro-segmentation, cloud automation, and incident response across AWS, Azure, and Openstack. He previously worked as a Firewall Engineer at Susquehanna International Group (SIG), and has interned on security and network engineering teams throughout his career.
                         </p>
@@ -134,206 +141,235 @@
                             Rayan is currently pursuing a Master of Science in Computer Science at Georgia Institute of Technology. He earned a Bachelor of Science in Computer Science from Drexel University, with a minor in Finance. During his undergraduate studies, he participated in a study abroad program in France at INSA Lyon and founded the Nepali Student Association at Drexel. His technical interests span cybersecurity, cloud infrastructure, network security, and machine learning.
                         </p>
                         <p>
-                            Outside of work, Rayan enjoys solo traveling (16 countries, 53 cities), playing soccer, table tennis, basketball, tennis, and pickleball, exploring new restaurants, gaming, and attending live music concerts.
+                            Outside of work, Rayan enjoys solo traveling (<span data-stat="countries">16</span> countries, <span data-stat="cities">50</span> cities), playing soccer, table tennis, basketball, tennis, and pickleball, exploring new restaurants, gaming, and attending live music concerts.
                         </p>
                     </div>
                 </div>
 
                 <!-- Interests Section -->
                 <div class="interests-section">
-                    <h3 class="subsection-title">My Interests</h3>
-                    <div class="interests-grid">
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <i class="fas fa-plane"></i>
-                            </div>
-                            <h4>Travel</h4>
-                            <p>Exploring new destinations and immersing myself in different cultures</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <h4>Foodie</h4>
-                            <p>Exploring new restaurants and trying new foods</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <i class="fas fa-music"></i>
-                            </div>
-                            <h4>Music</h4>
-                            <p>Live concerts, festivals, and discovering new artists</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <i class="fas fa-futbol"></i>
-                            </div>
-                            <h4>Soccer</h4>
-                            <p>Playing and watching the beautiful game</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <i class="fas fa-dumbbell"></i>
-                            </div>
-                            <h4>Fitness</h4>
-                            <p>Staying active and maintaining a healthy lifestyle</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <h4>Gaming</h4>
-                            <p>Strategy games and competitive online play</p>
+                    <h3 class="subsection-title"><span class="prompt">$</span> ls -la ~/interests</h3>
+                    <div class="term-window">
+                        <div class="term-body">
+                            <p class="dim">total 6</p>
+                            <ul class="interests-grid">
+                                <li class="interest-card">
+                                    <span class="perm">drwxr-xr-x</span>
+                                    <span class="interest-icon"><i class="fas fa-plane"></i></span>
+                                    <h4>travel/</h4>
+                                    <p>Exploring new destinations and immersing myself in different cultures</p>
+                                </li>
+                                <li class="interest-card">
+                                    <span class="perm">drwxr-xr-x</span>
+                                    <span class="interest-icon"><i class="fas fa-utensils"></i></span>
+                                    <h4>foodie/</h4>
+                                    <p>Exploring new restaurants and trying new foods</p>
+                                </li>
+                                <li class="interest-card">
+                                    <span class="perm">drwxr-xr-x</span>
+                                    <span class="interest-icon"><i class="fas fa-music"></i></span>
+                                    <h4>music/</h4>
+                                    <p>Live concerts, festivals, and discovering new artists</p>
+                                </li>
+                                <li class="interest-card">
+                                    <span class="perm">drwxr-xr-x</span>
+                                    <span class="interest-icon"><i class="fas fa-futbol"></i></span>
+                                    <h4>soccer/</h4>
+                                    <p>Playing and watching the beautiful game</p>
+                                </li>
+                                <li class="interest-card">
+                                    <span class="perm">drwxr-xr-x</span>
+                                    <span class="interest-icon"><i class="fas fa-dumbbell"></i></span>
+                                    <h4>fitness/</h4>
+                                    <p>Staying active and maintaining a healthy lifestyle</p>
+                                </li>
+                                <li class="interest-card">
+                                    <span class="perm">drwxr-xr-x</span>
+                                    <span class="interest-icon"><i class="fas fa-gamepad"></i></span>
+                                    <h4>gaming/</h4>
+                                    <p>Strategy games and competitive online play</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Fun Facts -->
                 <div class="fun-facts">
-                    <h3 class="subsection-title">Fun Facts About Me</h3>
+                    <h3 class="subsection-title"><span class="prompt">$</span> cat /proc/rayan/fun_facts</h3>
                     <div class="facts-grid">
                         <div class="fact-item">
                             <i class="fas fa-globe-americas"></i>
-                            <h4>16</h4>
-                            <p>Countries Visited</p>
+                            <h4 data-stat="countries">16</h4>
+                            <p>countries_visited</p>
                         </div>
                         <div class="fact-item">
                             <i class="fas fa-map-pin"></i>
-                            <h4>53</h4>
-                            <p>Cities Explored</p>
+                            <h4 data-stat="cities">50</h4>
+                            <p>cities_explored</p>
                         </div>
                         <div class="fact-item">
                             <i class="fas fa-utensils"></i>
                             <h4>100+</h4>
-                            <p>Restaurants Tried</p>
+                            <p>restaurants_tried</p>
                         </div>
                         <div class="fact-item">
                             <i class="fas fa-camera"></i>
                             <h4>1000+</h4>
-                            <p>Photos Taken</p>
+                            <p>photos_taken</p>
                         </div>
                         <div class="fact-item">
                             <i class="fas fa-plane-departure"></i>
-                            <h4>3</h4>
-                            <p>Continents Visited</p>
+                            <h4 data-stat="continents">3</h4>
+                            <p>continents_visited</p>
                         </div>
                         <div class="fact-item">
                             <i class="fas fa-language"></i>
                             <h4>3</h4>
-                            <p>Languages Spoken</p>
+                            <p>languages_spoken</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TRAVEL SECTION -->
-        <section id="travel" class="section travel-section">
-            <!-- Background Photo Gallery for Travel -->
-            <div class="travel-background-gallery">
-                <div class="travel-bg-slide active">
-                    <img src="images/travel-bg/travelbg1.jpg" alt="Travel Background 1">
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">guest@rayan-sec:~$</span> <span class="glitch" data-text="ls ~/projects">ls ~/projects</span></h2>
+                <p class="section-subtitle"># Things I've built and am building</p>
+
+                <!-- Featured Projects -->
+                <div class="projects-featured">
+                    <article class="term-window project-card featured">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><i></i><i></i><i></i></span>
+                            <span class="term-title">~/projects/viaza</span>
+                        </div>
+                        <div class="term-body">
+                            <div class="project-head">
+                                <i class="fas fa-rocket project-icon"></i>
+                                <h3>Viaza</h3>
+                                <span class="project-badge">featured</span>
+                            </div>
+                            <p class="project-desc">Viaza project description coming soon.</p>
+                            <div class="project-stack">
+                                <span class="dim">stack:</span>
+                                <span class="skill-tag">TBD</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RayanStha" target="_blank" rel="noopener"><i class="fab fa-github"></i> [source]</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="term-window project-card featured">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><i></i><i></i><i></i></span>
+                            <span class="term-title">~/projects/finance-tracker</span>
+                        </div>
+                        <div class="term-body">
+                            <div class="project-head">
+                                <i class="fas fa-chart-line project-icon"></i>
+                                <h3>Financial Tracker</h3>
+                                <span class="project-badge">featured</span>
+                            </div>
+                            <p class="project-desc">A financial tracking application. Full write-up coming soon.</p>
+                            <div class="project-stack">
+                                <span class="dim">stack:</span>
+                                <span class="skill-tag">TBD</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/RayanStha" target="_blank" rel="noopener"><i class="fab fa-github"></i> [source]</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg2.jpg" alt="Travel Background 2">
+
+                <!-- Other Projects -->
+                <h3 class="subsection-title"><span class="prompt">$</span> ls ~/projects/side</h3>
+                <div class="projects-side">
+                    <article class="project-card side">
+                        <div class="project-head">
+                            <i class="fas fa-layer-group project-icon"></i>
+                            <h3>TCG Price Tracker</h3>
+                        </div>
+                        <p class="project-desc">Tracks trading card game prices.</p>
+                    </article>
+
+                    <article class="project-card side">
+                        <div class="project-head">
+                            <i class="fas fa-lock project-icon"></i>
+                            <h3>NFC Locker</h3>
+                        </div>
+                        <p class="project-desc">A locker system I use day to day, unlocked with NFC tags.</p>
+                    </article>
                 </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg3.jpg" alt="Travel Background 3">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg4.jpg" alt="Travel Background 4">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg5.jpg" alt="Travel Background 5">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg6.jpg" alt="Travel Background 6">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg7.jpg" alt="Travel Background 7">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg8.jpg" alt="Travel Background 8">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg9.jpg" alt="Travel Background 9">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg10.JPG" alt="Travel Background 10">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg11.jpg" alt="Travel Background 11">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg12.jpg" alt="Travel Background 12">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg13.jpg" alt="Travel Background 13">
-                </div>
-                <div class="travel-bg-slide">
-                    <img src="images/travel-bg/travelbg14.jpg" alt="Travel Background 14">
-                </div>
-                <!-- Dark Overlay for better text readability -->
-                <div class="travel-overlay"></div>
             </div>
-
-            <!-- Travel Content Overlay -->
-            <div class="container travel-content">
-                <h2 class="section-title">My Travel Adventures</h2>
-                <p class="section-subtitle">Explore the places I've been and the memories I've made</p>
-                
-                <!-- Travel Stats -->
-                <div class="travel-stats">
-                    <div class="stat-card">
-                        <i class="fas fa-globe-americas"></i>
-                        <h3 id="countries-count">0</h3>
-                        <p>Countries Visited</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-map-pin"></i>
-                        <h3 id="cities-count">0</h3>
-                        <p>Cities Explored</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-plane-departure"></i>
-                        <h3 id="continents-count">0</h3>
-                        <p>Continents Visited</p>
-                    </div>
-                </div>
-
-                <div class="map-instructions">
-                    <p><i class="fas fa-info-circle"></i> Click on the markers to see photos and details from each location</p>
-                </div>
-                <div id="travel-map"></div>
-            </div>
-
-            <!-- Gallery Indicators -->
-            <div class="travel-gallery-indicators"></div>
         </section>
 
         <!-- EDUCATION SECTION -->
         <section id="education" class="section education-section">
             <div class="container">
-                <h2 class="section-title">Education & Experience</h2>
-                <p class="section-subtitle">My academic journey and professional accomplishments</p>
+                <h2 class="section-title"><span class="prompt">guest@rayan-sec:~$</span> <span class="glitch" data-text="git log --career">git log --career</span></h2>
+                <p class="section-subtitle"># My academic journey and professional accomplishments</p>
 
-                <!-- Education -->
+                <!-- Experience -->
                 <div class="resume-section">
                     <div class="section-header">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Education</h3>
+                        <i class="fas fa-briefcase"></i>
+                        <h3>experience/</h3>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <div class="timeline-date">
-                                    <i class="fas fa-calendar"></i>
-                                    2025 - Present
-                                </div>
+                                <div class="commit-line">commit 7c0ca5e <span class="ref">(HEAD -&gt; main)</span></div>
+                                <div class="timeline-date">Date: May 2023 - Present</div>
+                                <h4>Security Engineer III</h4>
+                                <h5>@ Comcast Inc. &middot; Philadelphia, PA</h5>
+                                <p>Leading security engineering initiatives including Zero Trust micro-segmentation, cloud automation, and incident response across AWS, Azure, and Openstack environments.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="commit-line">commit 5f12a22</div>
+                                <div class="timeline-date">Date: Mar 2022 - Sept 2022</div>
+                                <h4>Firewall Engineer</h4>
+                                <h5>@ Susquehanna International Group, LLC &middot; Bala Cynwyd, PA</h5>
+                                <p>Managed firewall infrastructure and network security across global offices, developing automation frameworks for compliance and security assessments.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="commit-line">commit 3e5c021</div>
+                                <div class="timeline-date">Date: March 2021 - September 2021</div>
+                                <h4>Security Engineer</h4>
+                                <h5>@ Comcast Inc. &middot; Philadelphia, PA</h5>
+                                <p>Focused on threat detection and security monitoring using SIEM platforms, threat intelligence, and MITRE ATT&amp;CK framework implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <div class="section-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>education/</h3>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="commit-line">commit 6a7ec25 <span class="ref">(in-progress)</span></div>
+                                <div class="timeline-date">Date: 2025 - Present</div>
                                 <h4>Master of Science in Computer Science</h4>
-                                <h5>Georgia Institute of Technology</h5>
-                                <p>Atlanta, GA</p>
+                                <h5>@ Georgia Institute of Technology &middot; Atlanta, GA</h5>
                                 <ul class="achievement-list">
                                     <li>Anticipated Graduation: December 2026</li>
                                     <li>Relevant Coursework: Computer Networks, Machine Learning for Trading, Data Analytics and Security, Introduction to Research</li>
@@ -344,13 +380,10 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <div class="timeline-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Sept 2021 - Dec 2021
-                                </div>
+                                <div class="commit-line">commit d4e3e1b</div>
+                                <div class="timeline-date">Date: Sept 2018 - June 2023</div>
                                 <h4>Bachelor of Science in Computer Science</h4>
-                                <h5>Drexel University</h5>
-                                <p>Philadelphia, PA</p>
+                                <h5>@ Drexel University &middot; Philadelphia, PA</h5>
                                 <ul class="achievement-list">
                                     <li>Major: Computer Science</li>
                                     <li>Minor: Finance</li>
@@ -361,64 +394,10 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <div class="timeline-date">
-                                    <i class="fas fa-calendar"></i>
-                                    August 2021 - December 2021 Study Abroad
-                                </div>
+                                <div class="commit-line">commit 1a5a1f0 <span class="ref">(study-abroad)</span></div>
+                                <div class="timeline-date">Date: August 2021 - December 2021 Study Abroad</div>
                                 <h4>Engineering Studies</h4>
-                                <h5>Institut National des Sciences Appliquées de Lyon</h5>
-                                <p>Lyon, France</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience -->
-                <div class="resume-section">
-                    <div class="section-header">
-                        <i class="fas fa-briefcase"></i>
-                        <h3>Experience</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">
-                                    <i class="fas fa-calendar"></i>
-                                    May 2023 - Present
-                                </div>
-                                <h4>Security Engineer III</h4>
-                                <h5>Comcast Inc.</h5>
-                                <p>Philadelphia, PA</p>
-                                <p>Leading security engineering initiatives including Zero Trust micro-segmentation, cloud automation, and incident response across AWS, Azure, and Openstack environments.</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Mar 2022 - Sept 2022
-                                </div>
-                                <h4>Firewall Engineer</h4>
-                                <h5>Susquehanna International Group, LLC</h5>
-                                <p>Bala Cynwyd, PA</p>
-                                <p>Managed firewall infrastructure and network security across global offices, developing automation frameworks for compliance and security assessments.</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">
-                                    <i class="fas fa-calendar"></i>
-                                    March 2021 - September 2021
-                                </div>
-                                <h4>Security Engineer</h4>
-                                <h5>Comcast Inc.</h5>
-                                <p>Philadelphia, PA</p>
-                                <p>Focused on threat detection and security monitoring using SIEM platforms, threat intelligence, and MITRE ATT&CK framework implementation.</p>
+                                <h5>@ Institut National des Sciences Appliquées de Lyon &middot; Lyon, France</h5>
                             </div>
                         </div>
                     </div>
@@ -427,12 +406,12 @@
                 <!-- Skills -->
                 <div class="resume-section">
                     <div class="section-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Skills & Expertise</h3>
+                        <i class="fas fa-terminal"></i>
+                        <h3>skills/</h3>
                     </div>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h4>Programming Languages</h4>
+                            <h4><span class="prompt">$</span> ls ./languages</h4>
                             <div class="skill-tags">
                                 <span class="skill-tag">Python</span>
                                 <span class="skill-tag">PowerShell</span>
@@ -442,7 +421,7 @@
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4>Technologies & Tools</h4>
+                            <h4><span class="prompt">$</span> ls ./tools</h4>
                             <div class="skill-tags">
                                 <span class="skill-tag">Git</span>
                                 <span class="skill-tag">JIRA</span>
@@ -459,7 +438,7 @@
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4>Soft Skills</h4>
+                            <h4><span class="prompt">$</span> ls ./soft_skills</h4>
                             <div class="skill-tags">
                                 <span class="skill-tag">Leadership</span>
                                 <span class="skill-tag">Communication</span>
@@ -473,94 +452,201 @@
             </div>
         </section>
 
+        <!-- TRAVEL SECTION -->
+        <section id="travel" class="section travel-section">
+            <!-- Background Photo Gallery for Travel -->
+            <div class="travel-background-gallery photo-bg">
+                <div class="travel-bg-slide active">
+                    <img src="images/travel-bg/travelbg1.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg2.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg3.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg4.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg5.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg6.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg7.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg8.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg9.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg10.JPG" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg11.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg12.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg13.jpg" alt="" loading="lazy">
+                </div>
+                <div class="travel-bg-slide">
+                    <img src="images/travel-bg/travelbg14.jpg" alt="" loading="lazy">
+                </div>
+                <div class="photo-tint"></div>
+            </div>
+
+            <!-- Travel Content Overlay -->
+            <div class="container travel-content">
+                <h2 class="section-title"><span class="prompt">guest@rayan-sec:~$</span> <span class="glitch" data-text="./traceroute --world">./traceroute --world</span></h2>
+                <p class="section-subtitle"># Explore the places I've been and the memories I've made</p>
+
+                <!-- Travel Stats -->
+                <div class="travel-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3 id="countries-count">0</h3>
+                        <p>countries_visited</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-pin"></i>
+                        <h3 id="cities-count">0</h3>
+                        <p>cities_explored</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <h3 id="continents-count">0</h3>
+                        <p>continents_visited</p>
+                    </div>
+                </div>
+
+                <div class="term-window map-window">
+                    <div class="term-titlebar">
+                        <span class="term-dots"><i></i><i></i><i></i></span>
+                        <span class="term-title">~/travel/world.geo</span>
+                    </div>
+                    <div class="map-instructions">
+                        <p><i class="fas fa-info-circle"></i> [INFO] Click on the markers to see photos and details from each location</p>
+                    </div>
+                    <div id="travel-map"></div>
+                </div>
+            </div>
+
+            <!-- Gallery Indicators -->
+            <div class="travel-gallery-indicators"></div>
+        </section>
+
         <!-- CONTACT SECTION -->
         <section id="contact" class="section contact-section">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">I'd love to hear from you</p>
+                <h2 class="section-title"><span class="prompt">guest@rayan-sec:~$</span> <span class="glitch" data-text="./contact.sh">./contact.sh</span></h2>
+                <p class="section-subtitle"># I'd love to hear from you</p>
 
                 <div class="contact-grid">
                     <!-- Contact Info -->
-                    <div class="contact-info">
-                        <div class="info-cards">
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-envelope"></i>
+                    <div class="term-window contact-info">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><i></i><i></i><i></i></span>
+                            <span class="term-title">~/contact.json</span>
+                        </div>
+                        <div class="term-body">
+                            <p class="json-brace">{</p>
+                            <div class="info-cards">
+                                <div class="info-card">
+                                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                                    <div class="info-details">
+                                        <h4>"email":</h4>
+                                        <p><a href="mailto:rayansth141@gmail.com">"rayansth141@gmail.com"</a>,</p>
+                                    </div>
                                 </div>
-                                <div class="info-details">
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:rayansth141@gmail.com">rayansth141@gmail.com</a></p>
+                                <div class="info-card">
+                                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                                    <div class="info-details">
+                                        <h4>"phone":</h4>
+                                        <p><a href="tel:732-213-9904">"732-213-9904"</a>,</p>
+                                    </div>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="info-details">
+                                        <h4>"location":</h4>
+                                        <p>"Philadelphia, PA",</p>
+                                    </div>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon"><i class="fab fa-linkedin"></i></div>
+                                    <div class="info-details">
+                                        <h4>"linkedin":</h4>
+                                        <p><a href="https://linkedin.com/in/rayanshrestha" target="_blank" rel="noopener">"linkedin.com/in/rayanshrestha"</a></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>Phone</h4>
-                                    <p><a href="tel:732-213-9904">732-213-9904</a></p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>Location</h4>
-                                    <p>Philadelphia, PA</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>LinkedIn</h4>
-                                    <p><a href="https://linkedin.com/in/rayanshrestha" target="_blank">linkedin.com/in/rayanshrestha</a></p>
-                                </div>
-                            </div>
+                            <p class="json-brace">}</p>
                         </div>
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="contact-form-container">
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="6" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">
-                                <i class="fas fa-paper-plane"></i> Send Message
-                            </button>
-                        </form>
-                        <div id="formMessage" class="form-message"></div>
+                    <div class="term-window contact-form-container">
+                        <div class="term-titlebar">
+                            <span class="term-dots"><i></i><i></i><i></i></span>
+                            <span class="term-title">~/send_message.sh</span>
+                        </div>
+                        <div class="term-body">
+                            <form id="contactForm" class="contact-form" novalidate>
+                                <div class="form-group">
+                                    <label for="name">--name=</label>
+                                    <input type="text" id="name" name="name" autocomplete="name" spellcheck="false" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">--email=</label>
+                                    <input type="email" id="email" name="email" autocomplete="email" spellcheck="false" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">--subject=</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">--message=</label>
+                                    <textarea id="message" name="message" rows="6" required></textarea>
+                                </div>
+                                <!-- Honeypot: hidden from humans, bots fill it and get dropped -->
+                                <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane"></i> [ EXECUTE ]
+                                </button>
+                            </form>
+                            <div id="formMessage" class="form-message" role="status"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <footer class="site-footer">
+        <p><span class="prompt">guest@rayan-sec:~$</span> exit</p>
+        <p class="dim">logout &middot; Connection to rayan-sec closed. &middot; &copy; <span id="year"></span> Rayan Shrestha</p>
+    </footer>
+
     <!-- Photo Modal -->
     <div id="photoModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
+        <div class="modal-content term-window">
+            <div class="term-titlebar">
+                <span class="term-dots"><i></i><i></i><i></i></span>
+                <span class="term-title">~/travel/location.log</span>
+                <span class="modal-close" title="Close">[x]</span>
+            </div>
             <div class="modal-body">
                 <div class="modal-gallery">
                     <img id="modalImage" src="" alt="">
-                    <button class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></button>
+                    <button class="modal-nav modal-prev" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
+                    <button class="modal-nav modal-next" aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="modal-info">
                     <h2 id="modalTitle"></h2>
@@ -575,6 +661,7 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/effects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/travel.js"></script>
     <script src="js/contact.js"></script>
