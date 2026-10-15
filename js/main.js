@@ -4,6 +4,7 @@ const typingTexts = [
     "a Traveler",
     "a Soccer Enthusiast",
     "a Photography Lover",
+    "a Gamer",
     "an Adventure Seeker",
     "a Problem Solver"
 ];
