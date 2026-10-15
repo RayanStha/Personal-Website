@@ -160,7 +160,7 @@ function updateModalImage() {
         placeholder.innerHTML = `
             <i class="fas fa-camera"></i>
             <p class="ph-caption">${photo.caption}</p>
-            <p>[ no image ] ${photo.src}</p>
+            <p>[ photo coming soon ]</p>
         `;
         modalImage.replaceWith(placeholder);
         placeholder.id = 'modalImage';

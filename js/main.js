@@ -1,11 +1,11 @@
 // Typing Animation Configuration
 const typingTexts = [
-    "Security Engineer",
-    "Traveler",
-    "Soccer Enthusiast",
-    "Photography Lover",
-    "Adventure Seeker",
-    "Problem Solver"
+    "a Security Engineer",
+    "a Traveler",
+    "a Soccer Enthusiast",
+    "a Photography Lover",
+    "an Adventure Seeker",
+    "a Problem Solver"
 ];
 
 let textIndex = 0;

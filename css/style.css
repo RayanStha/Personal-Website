@@ -838,7 +838,6 @@ a:hover {
 }
 
 .project-card.side .project-desc {
-    margin-bottom: 0;
     color: var(--text);
 }
 
